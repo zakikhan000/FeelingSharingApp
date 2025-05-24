@@ -1,13 +1,4 @@
 # FeelingSharingApp
-Sure! Here's a **detailed description** of your Final Year Project (FYP) titled:
-
----
-
-## 💡 **Project Title:**
-
-**FeelShare – A Mental Health Support Platform for Anonymous Emotional Expression**
-
----
 
 ## 🧠 **Project Overview:**
 
@@ -153,6 +144,3 @@ This project combines **Android development**, **AI-based chatbot interaction**,
 * Admin panel to review flagged content.
 * Integration with therapists (optional contact help).
 
----
-
-Would you like me to prepare this as a **formal proposal document**, **PowerPoint presentation**, or generate a **wireframe/UI design** as well?
