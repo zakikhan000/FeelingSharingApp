@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/back"
+            app:title="Set Your Profile Photos"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            app:titleTextColor="#2196F3" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Welcome Message -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Set up your real and hidden profile photos"
+                android:textAlignment="center"
+                android:textColor="#555555"
+                android:textSize="16sp" />
+
+            <!-- Real Image Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Real Profile Photo"
+                android:textColor="#2196F3"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Real Image Preview Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Profile Image Preview -->
+                    <FrameLayout
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="16dp">
+
+                        <!-- Default Image State -->
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_real_profile_preview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/profile_placeholder"
+                            app:shapeAppearanceOverlay="@style/circleImageView"
+                            app:strokeColor="#DDDDDD"
+                            app:strokeWidth="2dp" />
+
+                        <!-- Image Selection Indicator -->
+                        <ImageView
+                            android:id="@+id/img_real_selection_indicator"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="bottom|end"
+                            android:background="@drawable/circle_background"
+                            android:padding="8dp"
+                            android:src="@drawable/camera"
+                            android:visibility="visible"
+                            app:tint="#FFFFFF" />
+                    </FrameLayout>
+
+                    <!-- Status Text -->
+                    <TextView
+                        android:id="@+id/txt_real_selection_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No real photo selected"
+                        android:textColor="#757575"
+                        android:textSize="14sp" />
+
+                    <!-- Real Image Source Options -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <!-- Camera Option -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_real_camera"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:drawableTop="@drawable/camera"
+                            android:padding="8dp"
+                            android:text="Camera"
+                            android:textSize="12sp"
+                            app:drawableTint="#2196F3"
+                            app:icon="@drawable/camera"
+                            app:iconGravity="textStart"
+                            app:iconPadding="8dp"
+                            app:iconSize="24dp"
+                            app:iconTint="#2196F3"
+                            app:strokeColor="#2196F3" />
+
+                        <!-- Gallery Option -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_real_gallery"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:drawableTop="@drawable/gallery"
+                            android:padding="8dp"
+                            android:text="Gallery"
+                            android:textSize="12sp"
+                            app:drawableTint="#2196F3"
+                            app:icon="@drawable/gallery"
+                            app:iconGravity="textStart"
+                            app:iconPadding="8dp"
+                            app:iconSize="24dp"
+                            app:iconTint="#2196F3"
+                            app:strokeColor="#2196F3" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Hidden Image Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Hidden Profile Photo"
+                android:textColor="#2196F3"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Hidden Image Preview Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Profile Image Preview -->
+                    <FrameLayout
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="16dp">
+
+                        <!-- Default Image State -->
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_hidden_profile_preview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/profile_placeholder"
+                            app:shapeAppearanceOverlay="@style/circleImageView"
+                            app:strokeColor="#DDDDDD"
+                            app:strokeWidth="2dp" />
+
+                        <!-- Image Selection Indicator -->
+                        <ImageView
+                            android:id="@+id/img_hidden_selection_indicator"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="bottom|end"
+                            android:background="@drawable/circle_background"
+                            android:padding="8dp"
+                            android:src="@drawable/camera"
+                            android:visibility="visible"
+                            app:tint="#FFFFFF" />
+                    </FrameLayout>
+
+                    <!-- Status Text -->
+                    <TextView
+                        android:id="@+id/txt_hidden_selection_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No hidden photo selected"
+                        android:textColor="#757575"
+                        android:textSize="14sp" />
+
+                    <!-- Hidden Image Source Options -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <!-- Camera Option -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_hidden_camera"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:drawableTop="@drawable/camera"
+                            android:padding="8dp"
+                            android:text="Camera"
+                            android:textSize="12sp"
+                            app:drawableTint="#2196F3"
+                            app:icon="@drawable/camera"
+                            app:iconGravity="textStart"
+                            app:iconPadding="8dp"
+                            app:iconSize="24dp"
+                            app:iconTint="#2196F3"
+                            app:strokeColor="#2196F3" />
+
+                        <!-- Gallery Option -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_hidden_gallery"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:drawableTop="@drawable/gallery"
+                            android:padding="8dp"
+                            android:text="Gallery"
+                            android:textSize="12sp"
+                            app:drawableTint="#2196F3"
+                            app:icon="@drawable/gallery"
+                            app:iconGravity="textStart"
+                            app:iconPadding="8dp"
+                            app:iconSize="24dp"
+                            app:iconTint="#2196F3"
+                            app:strokeColor="#2196F3" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Info -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="40dp"
+                android:text="Your real photo will be shown publicly. Your hidden photo will only be visible to certain people according to your privacy settings."
+                android:textAlignment="center"
+                android:textColor="#757575"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Buttons at Bottom -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_skip"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="SKIP"
+            android:textColor="#757575" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_continue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="#2196F3"
+            android:enabled="false"
+            android:padding="12dp"
+            android:layout_marginBottom="40dp"
+            android:text="CONTINUE" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
